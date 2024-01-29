@@ -180,6 +180,7 @@ call <sid>hi('Folded', s:cdLeftLight, s:cdLeftDark, 'underline', {})
 call <sid>hi('FoldColumn', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('SignColumn', {}, s:cdBack, 'none', {})
 call <sid>hi('IncSearch', s:cdNone, s:cdSearchCurrent, 'none', {})
+call <sid>hi('CurSearch', s:cdNone, s:cdSearch, 'none', {})
 call <sid>hi('LineNr', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('CursorLineNr', s:cdPopupFront, s:cdBack, 'none', {})
 call <sid>hi('MatchParen', s:cdNone, s:cdCursorDark, 'none', {})
@@ -256,6 +257,8 @@ call <sid>hi('SpellLocal', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
 " NEOVIM
 " Make neovim specific groups load only on Neovim
 if has("nvim")
+	hi! link WinSeparator VertSplit
+
     " nvim-treesitter/nvim-treesitter (github)
     call <sid>hiTSlink('@error', 'TSError', 'ErrorMsg')
     call <sid>hiTSlink('@punctuation.delimiter', 'TSPunctDelimiter', 'Delimiter')

@@ -157,7 +157,7 @@ if g:codedark_conservative | let s:cdLightRed = s:cdOrange | endif
 let s:cdYellowOrange = {'gui': '#D7BA7D', 'cterm': s:cterm0A, 'cterm256': '179'}
 let s:cdYellow = {'gui': '#DCDCAA', 'cterm': s:cterm0A, 'cterm256': '187'}
 if g:codedark_conservative | let s:cdYellow = s:cdFront | endif
-let s:cdPink = {'gui': '#C586C0', 'cterm': s:cterm0E, 'cterm256': '176'}
+let s:cdPink = {'gui': '#BD63C5', 'cterm': s:cterm0E, 'cterm256': '176'}
 if g:codedark_conservative | let s:cdPink = s:cdBlue | endif
 let s:cdSilver = {'gui': '#C0C0C0', 'cterm': s:cterm05, 'cterm256': '7'}
 
@@ -220,15 +220,15 @@ call <sid>hi('Character', s:cdOrange, {}, 'none', {})
 call <sid>hi('Number', s:cdLightGreen, {}, 'none', {})
 call <sid>hi('Boolean', s:cdBlue, {}, 'none', {})
 hi! link Float Number
-call <sid>hi('Identifier', s:cdLightBlue, {}, 'none', {})
-call <sid>hi('Function', s:cdYellow, {}, 'none', {})
-call <sid>hi('Statement', s:cdPink, {}, 'none', {})
-call <sid>hi('Conditional', s:cdPink, {}, 'none', {})
-call <sid>hi('Repeat', s:cdPink, {}, 'none', {})
-call <sid>hi('Label', s:cdPink, {}, 'none', {})
+call <sid>hi('Identifier', s:cdFront, {}, 'none', {})
+call <sid>hi('Function', s:cdFront, {}, 'none', {})
+call <sid>hi('Statement', s:cdBlue, {}, 'none', {})
+call <sid>hi('Conditional', s:cdBlue, {}, 'none', {})
+call <sid>hi('Repeat', s:cdBlue, {}, 'none', {})
+call <sid>hi('Label', s:cdBlue, {}, 'none', {})
 call <sid>hi('Operator', s:cdFront, {}, 'none', {})
-call <sid>hi('Keyword', s:cdPink, {}, 'none', {})
-call <sid>hi('Exception', s:cdPink, {}, 'none', {})
+call <sid>hi('Keyword', s:cdBlue, {}, 'none', {})
+call <sid>hi('Exception', s:cdBlue, {}, 'none', {})
 call <sid>hi('PreProc', s:cdPink, {}, 'none', {})
 call <sid>hi('Include', s:cdPink, {}, 'none', {})
 call <sid>hi('Define', s:cdPink, {}, 'none', {})
@@ -265,9 +265,9 @@ if has("nvim")
     call <sid>hiTSlink('@punctuation.bracket', 'TSPunctBracket', 'Delimiter')
     call <sid>hiTSlink('@punctuation.special', 'TSPunctSpecial', 'Delimiter')
     " Constant
-    call <sid>hiTS('@constant', 'TSConstant', s:cdYellow, {}, 'none', {})
+    call <sid>hiTS('@constant', 'TSConstant', s:cdLightGreen, {}, 'none', {})
     call <sid>hiTSlink('@constant.builtin', 'TSConstBuiltin', 'Constant')
-    call <sid>hiTS('@constant.macro', 'TSConstMacro', s:cdBlueGreen, {}, 'none', {})
+    call <sid>hiTS('@constant.macro', 'TSConstMacro', s:cdPink, {}, 'none', {})
     call <sid>hiTSlink('@string', 'TSString', 'String')
     call <sid>hiTSlink('@string.regex', 'TSStringRegex', 'String')
     call <sid>hiTS('@string.escape', 'TSStringEscape', s:cdYellowOrange, {}, 'none', {})
@@ -282,12 +282,12 @@ if has("nvim")
     call <sid>hiTSlink('@function.builtin', 'TSFuncBuiltin', 'Function')
     call <sid>hiTSlink('@function', 'TSFunction','Function')
     call <sid>hiTSlink('@function.macro', 'TSFuncMacro','Function')
-    call <sid>hiTS('@parameter', 'TSParameter', s:cdLightBlue, {}, 'none', {})
-    call <sid>hiTS('@parameter.reference', 'TSParameterReference', s:cdLightBlue, {}, 'none', {})
-    call <sid>hiTS('@method', 'TSMethod', s:cdYellow, {}, 'none', {})
+    call <sid>hiTS('@parameter', 'TSParameter', s:cdLineNumber, {}, 'none', {})
+    call <sid>hiTS('@parameter.reference', 'TSParameterReference', s:cdLineNumber, {}, 'none', {})
+    call <sid>hiTS('@method', 'TSMethod', s:cdFront, {}, 'none', {})
     call <sid>hiTS('@field', 'TSField', s:cdLightBlue, {}, 'none', {})
-    call <sid>hiTS('@property', 'TSProperty', s:cdLightBlue, {}, 'none', {})
-    call <sid>hiTS('@constructor', 'TSConstructor', s:cdBlueGreen, {}, 'none', {})
+    call <sid>hiTS('@property', 'TSProperty', s:cdFront, {}, 'none', {})
+    call <sid>hiTS('@constructor', 'TSConstructor', s:cdFront, {}, 'none', {})
     " Keywords
     call <sid>hiTSlink('@conditional', 'TSConditional', 'Conditional')
     call <sid>hiTSlink('@repeat', 'TSRepeat', 'Repeat')
@@ -302,7 +302,7 @@ if has("nvim")
     call <sid>hi('TSStructure', s:cdLightBlue, {}, 'none', {})
     call <sid>hiTSlink('@include', 'TSInclude', 'Include')
     " Variable
-    call <sid>hiTS('@variable', 'TSVariable', s:cdLightBlue, {}, 'none', {})
+    call <sid>hiTS('@variable', 'TSVariable', s:cdFront, {}, 'none', {})
     call <sid>hiTS('@variable.builtin', 'TSVariableBuiltin', s:cdLightBlue, {}, 'none', {})
     " Text
     call <sid>hiTS('@text', 'TSText', s:cdFront, s:cdNone, 'bold', {})
